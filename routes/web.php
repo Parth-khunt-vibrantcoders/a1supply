@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use Illuminate\Support\Facades\Artisan;
+use App\Http\Controllers\frontend\HomeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,7 +13,15 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/clear-cache', function() {
+    Artisan::call('cache:clear');
+    echo "Cache is cleared<br>";
+    Artisan::call('route:clear');
+    echo "route cache is cleared<br>";
+    Artisan::call('config:clear');
+    echo "config is cleared<br>";
+    Artisan::call('view:clear');
+    echo "view is cleared<br>";
 });
+
+Route::get('/', [HomeController::class, 'home'])->name('home');
