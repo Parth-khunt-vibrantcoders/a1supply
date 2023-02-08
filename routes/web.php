@@ -3,6 +3,10 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Artisan;
 use App\Http\Controllers\frontend\HomeController;
+use App\Http\Controllers\frontend\ServicesController;
+use App\Http\Controllers\frontend\AboutusController;
+use App\Http\Controllers\frontend\ContactController;
+use App\Http\Controllers\frontend\FacalityController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,3 +29,16 @@ Route::get('/clear-cache', function() {
 });
 
 Route::get('/', [HomeController::class, 'home'])->name('home');
+
+Route::get('container-trailer-yard', [ServicesController::class, 'container_trailer_yard'])->name('container-trailer-yard');
+Route::get('transload-cross-dock', [ServicesController::class, 'transload_cross_dock'])->name('transload-cross-dock');
+Route::get('dedicated', [ServicesController::class, 'dedicated'])->name('dedicated');
+Route::get('shuttle-services', [ServicesController::class, 'shuttle_services'])->name('shuttle-services');
+Route::get('ftl', [ServicesController::class, 'ftl'])->name('ftl');
+
+Route::get('about-us', [AboutusController::class, 'about_us'])->name('about-us');
+Route::get('leadership', [AboutusController::class, 'leadership'])->name('leadership');
+
+Route::get('all-location', [FacalityController::class, 'all_location'])->name('all-location');
+
+Route::get('contact', [ContactController::class, 'contact'])->name('contact');
