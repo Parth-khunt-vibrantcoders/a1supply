@@ -7,6 +7,7 @@ use App\Http\Controllers\frontend\ServicesController;
 use App\Http\Controllers\frontend\AboutusController;
 use App\Http\Controllers\frontend\ContactController;
 use App\Http\Controllers\frontend\FacalityController;
+use App\Http\Controllers\backend\LoginController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -42,3 +43,8 @@ Route::get('leadership', [AboutusController::class, 'leadership'])->name('leader
 Route::get('all-location', [FacalityController::class, 'all_location'])->name('all-location');
 
 Route::get('contact', [ContactController::class, 'contact'])->name('contact');
+Route::post('contact-submit', [ContactController::class, 'contact_submit'])->name('contact-submit');
+
+Route::get('login', [LoginController::class, 'login'])->name('login');
+Route::post('check-login', [LoginController::class, 'check_login'])->name('check-login');
+Route::get('/testing-mail', [LoginController::class, 'testingmail'])->name('testing-mail');

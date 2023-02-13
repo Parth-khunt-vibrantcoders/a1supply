@@ -14,4 +14,9 @@ class ContactController extends Controller
         $data['keywords'] = Config::get('constants.SYSTEM_NAME') . ' || Contact Us' ;
         return view('frontend.pages.contact.contact', $data);
     }
+
+    public function contact_submit(Request $request){
+        print_r($request->all());
+        die();
+    }
 }
