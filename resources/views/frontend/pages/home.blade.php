@@ -16,7 +16,7 @@
                 <span class="headline_one" data-aos="zoom-in" data-aos-duration="2000">A1 Group Companies</span>
                 <span class="headline_two" data-aos="zoom-in" data-aos-duration="2000">Transport made simple</span>
             </div>
-            <a href="contact.html" class="btn-cta toggle-contact btn-primary">Contact Us</a>
+            <a href="{{ route('contact') }}" class="btn-cta toggle-contact btn-primary">Contact Us</a>
         </div>
     </section>
     <!-- Banner Section End -->
@@ -48,8 +48,8 @@
                     <p class="text-justify">A1 Group Companies proudly offers distribution to supplychain and insert the above services, Texas based, serving all major port gateways
                     </p>
                     <div class="cust_btn">
-                        <a href="contact.html" class="btn-primary">Ship With Us</a>
-                        <a href="about.html" class="btn-secondary">Learn More</a>
+                        <a href="{{ route('contact') }}" class="btn-primary">Ship With Us</a>
+                        <a href="{{ route('about-us') }}" class="btn-secondary">Learn More</a>
                     </div>
                 </div>
             </div>
@@ -87,7 +87,7 @@
                     <p>Drive now with A1 Group Companies and receive PTO, medical benefits, and more!</p>
                     <div class="carrier_btn">
                         <a href="https://hrcenter.ontempworks.com/en/SimplifiedTransport" target="_blank" download="Application.pdf" class="btn-cta btn-primary">Drive With Us</a>
-                        <a href="career.html" class="btn-cta btn-secondary">Learn More</a>
+
                     </div>
                 </div>
                 <div class="carrier_boxes">
@@ -155,7 +155,7 @@
                     <h2>WE ARE SIMPLY THE BEST!</h2>
                     <!-- <h4>Customers want to ship with us. Carriers want to drive for us.</h4> -->
                     <p>Reliable and fast services are a key components to our operation. We develop a simple solution for all of our customers to ensure top quality services at all times.</p>
-                    <a href="about.html" class="btn-primary">Get to know us</a>
+                    <a href="{{ route('about-us') }}" class="btn-primary">Get to know us</a>
                 </div>
                 <div class="why_gallery">
                     <div class="img1" data-aos="fade-down" data-aos-delay="300" data-aos-duration="1000"><img class="img-why-dt img-why-2" src="{{  asset('public/frontend/assest/images/img1.jpeg') }}"></div>

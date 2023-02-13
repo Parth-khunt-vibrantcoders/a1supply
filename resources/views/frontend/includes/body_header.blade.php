@@ -1,4 +1,7 @@
 <!-- Header Start -->
+@php
+$currentRoute = Route::current()->getName();
+@endphp
 <header>
     <div class="header_wrapper">
         <div class="header_logo">
@@ -8,35 +11,35 @@
         </div>
         <div class="header_center_menu">
             <ul>
-                <li class="active">
+                <li class="{{ $currentRoute == 'home' ? 'active' : '' }}">
                     <a href="{{ route('home') }}">Home</a>
                 </li>
-                <li class="dropdown">
+                <li class="dropdown {{ $currentRoute == 'container-trailer-yard' || $currentRoute == 'transload-cross-dock' || $currentRoute == 'dedicated' || $currentRoute == 'shuttle-services' || $currentRoute == 'ftl' ? 'active' : '' }}">
                     <a href="#">Services <i class="fas fa-caret-down"></i></a>
                     <ul class="dropdown-menu">
-                        <li ><a href="{{ route('container-trailer-yard') }}">Container & trailer Yard</a></li>
-                        <li ><a href="{{ route('transload-cross-dock') }}">Transload & cross Dock</a></li>
-                        <li ><a href="{{ route('dedicated') }}">Dedicated</a></li>
-                        <li ><a href="{{ route('shuttle-services') }}">Shuttle Services</a></li>
-                        <li ><a href="{{ route('ftl') }}">FTL</a></li>
+                        <li class="{{ $currentRoute == 'container-trailer-yard'  ? 'active' : '' }}"><a href="{{ route('container-trailer-yard') }}">Container & trailer Yard</a></li>
+                        <li class="{{  $currentRoute == 'transload-cross-dock' ? 'active' : '' }}"><a href="{{ route('transload-cross-dock') }}">Transload & cross Dock</a></li>
+                        <li class="{{  $currentRoute == 'dedicated'  ? 'active' : '' }}"><a href="{{ route('dedicated') }}">Dedicated</a></li>
+                        <li class="{{  $currentRoute == 'shuttle-services' ? 'active' : '' }}"><a href="{{ route('shuttle-services') }}">Shuttle Services</a></li>
+                        <li class="{{  $currentRoute == 'ftl' ? 'active' : '' }}"><a href="{{ route('ftl') }}">FTL</a></li>
                     </ul>
                 </li>
-                <li class="dropdown">
+                <li class="dropdown {{ $currentRoute == 'about-us' || $currentRoute == 'leadership'  ? 'active' : '' }}">
                     <a href="#">About Us <i class="fas fa-caret-down"></i></a>
                     <ul class = "dropdown-menu">
-                        <li> <a href="{{ route('about-us') }}">About Us</a></li>
-                        <li> <a href="{{ route('leadership') }}">Leadership</a></li>
+                        <li class="{{ $currentRoute == 'about-us'  ? 'active' : '' }}"> <a href="{{ route('about-us') }}">About Us</a></li>
+                        <li class="{{ $currentRoute == 'leadership'  ? 'active' : '' }}"> <a href="{{ route('leadership') }}">Leadership</a></li>
                     </ul>
                 </li>
 
-                 <li class="dropdown">
+                 <li class="dropdown {{ $currentRoute == 'all-location'  ? 'active' : '' }}">
                     <a href="#">Facality <i class="fas fa-caret-down"></i></a>
                     <ul class = "dropdown-menu">
-                        <li> <a href="{{ route('all-location') }}">All Location </a></li>
+                        <li class="{{ $currentRoute == 'all-location'  ? 'active' : '' }}"> <a href="{{ route('all-location') }}">All Location </a></li>
                     </ul>
                 </li>
 
-                <li>
+                <li class="{{ $currentRoute == 'contact'  ? 'active' : '' }}">
                     <a href="{{ route('contact') }}">Contact</a>
                 </li>
                 <li class="apply_pdf">
