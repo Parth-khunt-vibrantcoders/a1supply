@@ -21,25 +21,25 @@
                 <form method="POST" action="{{ route('contact-submit') }}" id="contact-form">@csrf
                     <div class="form-group w-100">
                         <label>Name *</label>
-                        <input type="text" name="name" placeholder="Please enter your Name"/>
+                        <input type="text" class="form-control" name="name" placeholder="Please enter your Name"/>
                     </div>
                     <div class="form-group w-100">
                         <label>Company *</label>
-                        <input type="text" name="company"  placeholder="Please enter Compnay"/>
+                        <input type="text" class="form-control" name="company"  placeholder="Please enter Compnay"/>
                     </div>
                     <div class="form-group w-100">
                         <label>Email </label>
-                        <input type="text" name="email"  placeholder="Please enter your Email"/>
+                        <input type="text" class="form-control" name="email"  placeholder="Please enter your Email"/>
                     </div>
 
                     <div class="form-group w-100">
                         <label>Mobile number *</label>
-                        <input type="text" name="mo_no"  placeholder="Please enter your Email"/>
+                        <input type="text" class="form-control" name="mo_no"  placeholder="Please enter your Email"/>
                     </div>
 
                     <div class="form-group w-100">
                         <label>Description</label>
-                        <textarea name="description"  placeholder="Please enter Description"></textarea>
+                        <textarea name="description" class="form-control" placeholder="Please enter Description"></textarea>
                     </div>
                     <div class="form-group w-100">
                         <input type="submit" />

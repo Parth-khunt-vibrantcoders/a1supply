@@ -23,12 +23,19 @@ Route::get('admin-logout', [LoginController::class, 'logout'])->name('admin-logo
 $adminPrefix = "admin";
 Route::group(['prefix' => $adminPrefix, 'middleware' => ['admin']], function() {
     Route::get('change-password', [DashboardController::class, 'change_password'])->name('change-password');
-    Route::post('save-change-password', [DashboardController::class, 'save_password'])->name('save-change-password');
+    Route::post('save-password', [DashboardController::class, 'save_password'])->name('save-password');
+
     Route::get('update-profile', [DashboardController::class, 'update_profile'])->name('update-profile');
-    Route::post('save-update-profile', [DashboardController::class, 'save_profile'])->name('save-update-profile');
+    Route::post('admin-save-profile', [DashboardController::class, 'save_profile'])->name('admin-save-profile');
+
     Route::get('dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');
-    Route::post('my-report-ajaxcall', [DashboardController::class, 'ajaxcall'])->name('my-report-ajaxcall');
+
     Route::post('common-ajaxcall', [CommonController::class, 'ajaxcall'])->name('common-ajaxcall');
+});
+
+Route::group(['prefix' => $adminPrefix, 'middleware' => ['contant-us']], function() {
+    Route::get('contant-us-list', [DashboardController::class, 'change_password'])->name('contant-us-list');
+    Route::post('contant-us-ajaxcall', [CommonController::class, 'ajaxcall'])->name('contant-us-ajaxcall');
 });
 
 

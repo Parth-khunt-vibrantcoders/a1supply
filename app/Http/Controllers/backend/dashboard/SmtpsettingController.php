@@ -17,7 +17,7 @@ class SmtpsettingController extends Controller
     public function smtp_setting(Request $request){
         $objSmtpsetting = new Smtpsetting();
         $data['smtp_setting'] = $objSmtpsetting->get_smtp_setting_details();
-       
+
         if ($request->isMethod('post')) {
             $objSmtp = new Smtpsetting();
             $result = $objSmtp->update_smtp_setting($request);

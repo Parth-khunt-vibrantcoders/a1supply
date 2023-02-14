@@ -5,7 +5,7 @@ namespace App\Http\Controllers\backend\dashboard;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Config;
-
+use App\Models\Users;
 
 
 class DashboardController extends Controller
@@ -115,7 +115,7 @@ class DashboardController extends Controller
         $data['header'] = array(
             'title' => 'Update Profile',
             'breadcrumb' => array(
-                'Reports ' => route('my-report'),
+                'Dashboard ' => route('dashboard'),
                 'Update Profile' => 'Update Profile',
             )
         );
@@ -130,7 +130,7 @@ class DashboardController extends Controller
             $return['status'] = 'success';
              $return['jscode'] = '$(".submitbtn:visible").removeAttr("disabled");$("#loader").hide();';
             $return['message'] = 'Your profile successfully updated.';
-            $return['redirect'] = route('admin-update-profile');
+            $return['redirect'] = route('dashboard');
         } else {
             if ($result == "email_exist") {
                 $return['status'] = 'error';
@@ -172,7 +172,7 @@ class DashboardController extends Controller
         $data['header'] = array(
             'title' => 'Change Password',
             'breadcrumb' => array(
-                'Reports ' => route('my-report'),
+                'Dashboard ' => route('dashboard'),
                 'Change Password' => 'Change Password',
             )
         );
@@ -187,7 +187,7 @@ class DashboardController extends Controller
             $return['status'] = 'success';
             $return['jscode'] = '$(".submitbtn:visible").removeAttr("disabled");$("#loader").hide();';
             $return['message'] = 'Your password has been updated successfully.';
-            $return['redirect'] = route('admin-change-password');
+            $return['redirect'] = route('dashboard');
         } else {
             if ($result == "password_not_match") {
                 $return['status'] = 'warning';

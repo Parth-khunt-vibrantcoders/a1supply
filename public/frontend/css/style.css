@@ -123,11 +123,11 @@ h6 {
 ::-webkit-input-placeholder { /* Edge */
     color: #ddd;
     font-family: 'Poppins', sans-serif;
-} 
+}
 :-ms-input-placeholder { /* Internet Explorer 10-11 */
     color: #ddd;
     font-family: 'Poppins', sans-serif;
-}  
+}
 ::placeholder {
     color: #ddd;
     font-family: 'Poppins', sans-serif;
@@ -1303,5 +1303,9 @@ input[type="submit"]:hover {
     font-size: 18px;
     line-height: 26px;
     font-weight: 700;
+}
+
+.has-error{
+    border: 1px solid red !important;
 }
 /* Carrer Page css end */

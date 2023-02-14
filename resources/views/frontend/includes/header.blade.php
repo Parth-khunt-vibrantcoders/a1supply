@@ -10,4 +10,26 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
     <link href="{{  asset('public/frontend/css/style.css') }}" rel="stylesheet">
     <link href="{{  asset('public/frontend/css/responsive.css') }}" rel="stylesheet">
+
+    @if (!empty($css))
+        @foreach ($css as $value)
+            @if(!empty($value))
+                <link rel="stylesheet" href="{{ asset('public/backend/css/customcss/'.$value) }}">
+            @endif
+        @endforeach
+    @endif
+
+
+    @if (!empty($plugincss))
+        @foreach ($plugincss as $value)
+            @if(!empty($value))
+                <link rel="stylesheet" href="{{ asset('public/backend/'.$value) }}">
+            @endif
+        @endforeach
+    @endif
+
+    <script>
+        var baseurl = "{{ asset('/') }}";
+        var date_formate = "dd-M-yyyy";
+    </script>
 </head>
